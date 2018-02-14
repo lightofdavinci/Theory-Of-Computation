@@ -9,12 +9,12 @@ if (args.length != 1) {
 
 const filename = args[0];
 
-// !!!! IMPLEMENT ME
-
 // Read file
+const contents = fs.readFileSync(filename, 'utf8');
 
 // Set up regex
-
-// Find matches
+const re = new RegExp("(https?:\/\/).+?(?=[\"|'])", 'g');
 
 // Print all matches
+console.log(contents.match(re));
+console.log(contents.match(re).length)
